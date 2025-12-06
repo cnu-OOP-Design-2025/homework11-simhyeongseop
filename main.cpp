@@ -42,8 +42,11 @@ void doTest3() {
     players.push_back(make_shared<Archer>());
     /* TODO */
     // Zombie 캐릭터를 players에 추가
+    players.push_back(make_shared<UndeadAdapter>(make_shared<Zombie>()));
     // Skeleton 캐릭터를 players에 추가
+    players.push_back(make_shared<UndeadAdapter>(make_shared<Skeleton>()));
     // Lich 캐릭터를 players에 추가
+    players.push_back(make_shared<UndeadAdapter>(make_shared<Lich>()));
 
 
     for(auto player: players){
