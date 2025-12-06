@@ -40,16 +40,11 @@ void doTest3() {
     players.push_back(make_shared<Knight>());
     players.push_back(make_shared<Wizard>());
     players.push_back(make_shared<Archer>());
-    /* TODO */
-    // Zombie 캐릭터를 players에 추가
     players.push_back(make_shared<UndeadAdapter>(make_shared<Zombie>()));
-    // Skeleton 캐릭터를 players에 추가
     players.push_back(make_shared<UndeadAdapter>(make_shared<Skeleton>()));
-    // Lich 캐릭터를 players에 추가
     players.push_back(make_shared<UndeadAdapter>(make_shared<Lich>()));
 
-
-    for(auto player: players){
+    for (auto player : players) {
         cout << "-------------------------------------------------------------" << endl;
         equip_test1(player);
         equip_test2(player);
@@ -98,7 +93,7 @@ void doTest1(){
     my_unique_ptr<Student> p1(new Student("Jack"));
     cout << "Create p1 : " << p1->name << endl;
 
-    my_unique_ptr<Student> p2 = std::move(p1); // 이동 생성자 
+    my_unique_ptr<Student> p2 = std::move(p1); // 이동 생성자
     if(p1.get() == nullptr)
         cout << "After move, p1 is empty" << endl;
 
@@ -109,7 +104,7 @@ void doTest1(){
     my_unique_ptr<Student> p3(new Student("Kim"));
     cout << "Create p3 : " << p3->name << endl;
 
-    p3 = std::move(p2); // 이동 할당자
+    p3 = std::move(p2); // 이동 대입
 
     if(p2.get() == nullptr)
         cout << "After move, p2 is empty" << endl;
