@@ -86,7 +86,7 @@ public:
     my_unique_ptr& operator=(const my_unique_ptr&) = delete;
 
     // 이동 생성자: other가 관리하는 자원의 소유권을 가져옴 
-    my_unique_ptr(my_unique_ptr&& other) noexcept: ptr(nullptr) {
+    my_unique_ptr(my_unique_ptr&& other) noexcept: ptr(other.ptr) {
         /* TODO */
         other.ptr = nullptr;
     }
